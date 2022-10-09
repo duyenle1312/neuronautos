@@ -24,7 +24,6 @@ export async function getServerSideProps() {
         address: data.address || "None",
       })),
     },
-    revalidate: 1,
   };
 }
 
