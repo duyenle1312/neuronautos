@@ -5,7 +5,7 @@ function MainNavigation() {
     <nav className="bg-white dark:bg-black dark:text-white flex flex-col md:flex-row items-center md:justify-between px-6 py-4 border-b border-b-gray-60 shadow-sm max-w-screen-2xl mx-auto">
       {/* Logo */}
       <div>
-        <h2 className="text-2xl font-bold pl-12 cursor-pointer">
+        <h2 className="text-2xl font-bold lg:pl-12 cursor-pointer">
           <Link href="/">
             <span className="text-blue-600">Neuron Autos</span>
           </Link>
