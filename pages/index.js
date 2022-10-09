@@ -6,7 +6,7 @@ const HomePage = (props) => {
 };
 
 // Wait to get data before returning the page to the client's browser => good for SEO
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // fetch data (database)
   const client = await MongoClient.connect(process.env.DB_HOST);
   const db = client.db();
