@@ -16,14 +16,14 @@ function MainNavigation() {
           <li className="pointer-cursor ">
             <Link href="/">
               <span className="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-500 transition-colors duration-300">
-                All Requests
+                All Orders
               </span>
             </Link>
           </li>
           <li>
             <Link href="/new">
               <span className="font-semibold tracking-tight block cursor-pointer p-2 hover:text-blue-500 transition-colors duration-300">
-                New Request
+                Place an order
               </span>
             </Link>
           </li>
