@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import classes from './NewMeetupForm.module.css';
+import classes from './NewOrderForm.module.css';
 
-function NewMeetupForm(props) {
+function NewOrderForm(props) {
   const nameInputRef = useRef();
   const phoneInputRef = useRef();
   const emailInputRef = useRef();
@@ -21,7 +21,7 @@ function NewMeetupForm(props) {
     const enteredAddress = addressInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
 
-    const meetupData = {
+    const orderData = {
       name: enteredName,
       phone: enteredPhone,
       email: enteredEmail,
@@ -30,9 +30,9 @@ function NewMeetupForm(props) {
       address: enteredAddress,
       description: enteredDescription,
     };
-    console.log(meetupData);
+    console.log(orderData);
 
-    props.onAddMeetup(meetupData);
+    props.onAddOrder(orderData);
   }
 
   return (
@@ -80,4 +80,4 @@ function NewMeetupForm(props) {
   );
 }
 
-export default NewMeetupForm;
+export default NewOrderForm;

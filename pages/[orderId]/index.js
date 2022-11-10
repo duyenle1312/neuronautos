@@ -1,18 +1,18 @@
 import { MongoClient, ObjectId } from "mongodb";
 
-import MeetupDetail from "../../components/meetups/MeetupDetail";
+import OrderDetail from "../../components/orders/OrderDetail";
 
-const MeetupDetails = (props) => {
-  return <MeetupDetail data={props.data} />;
+const OrderDetails = (props) => {
+  return <OrderDetail data={props.data} />;
 };
 
 export async function getServerSideProps(context) {
-  const meetupId = context.params.meetupId;
+  const orderId = context.params.orderId;
 
   const client = await MongoClient.connect(process.env.DB_HOST);
   const db = client.db();
-  const meetupsCollection = db.collection("meetups");
-  const result = await meetupsCollection.findOne({ _id: ObjectId(meetupId) });
+  const ordersCollection = db.collection("orders");
+  const result = await ordersCollection.findOne({ _id: ObjectId(orderId) });
   client.close();
 
   return {
@@ -29,4 +29,4 @@ export async function getServerSideProps(context) {
   };
 }
 
-export default MeetupDetails;
+export default OrderDetails;

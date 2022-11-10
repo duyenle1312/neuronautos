@@ -1,8 +1,8 @@
 import { MongoClient } from "mongodb";
-import MeetupList from "../components/meetups/MeetupList";
+import OrderList from "../components/orders/OrderList";
 
 const HomePage = (props) => {
-  return <MeetupList meetups={props.meetups} />;
+  return <OrderList orders={props.orders} />;
 };
 
 // Wait to get data before returning the page to the client's browser => good for SEO
@@ -10,13 +10,13 @@ export async function getServerSideProps() {
   // fetch data (database)
   const client = await MongoClient.connect(process.env.DB_HOST);
   const db = client.db();
-  const meetupsCollection = db.collection("meetups");
-  const result = await meetupsCollection.find().toArray();
+  const ordersCollection = db.collection("orders");
+  const result = await ordersCollection.find().toArray();
   client.close();
 
   return {
     props: {
-      meetups: result.map((data) => ({
+      orders: result.map((data) => ({
         id: data._id.toString(),
         title: data.name + `${data.title ? " | " + data.title : ''}`,
         phone: data.phone || "None",

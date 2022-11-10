@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
-import classes from './MeetupItem.module.css';
+import classes from './OrderItem.module.css';
 
-function MeetupItem(props) {
+function OrderItem(props) {
   const router = useRouter();
   const showDetailsHandler = () => {
     router.push('/' + props.id)
@@ -24,4 +24,4 @@ function MeetupItem(props) {
   );
 }
 
-export default MeetupItem;
+export default OrderItem;
